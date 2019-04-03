@@ -4,7 +4,7 @@ KUBECONFIG="${1}"
 NAME="${2}"
 MESSAGE="${3}"
 
-wait_for_existance() {
+wait_for_existence() {
 	while [ ! -e "${1}" ]
 	do
 		sleep 5
@@ -12,8 +12,8 @@ wait_for_existance() {
 }
 
 echo "Waiting for bootstrap to complete..."
-wait_for_existance /opt/openshift/.bootkube.done
-wait_for_existance /opt/openshift/.openshift.done
+wait_for_existence /opt/openshift/.bootkube.done
+wait_for_existence /opt/openshift/.openshift.done
 
 echo "Reporting install progress..."
 timestamp="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
