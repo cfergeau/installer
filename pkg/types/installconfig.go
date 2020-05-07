@@ -110,6 +110,10 @@ type InstallConfig struct {
 
 	// FIPS configures https://www.nist.gov/itl/fips-general-information
 	FIPS bool `json:"fips,omitempty"`
+
+	// Profile to use when deploying the cluster. For a regular cluster, ClusterProfile should be empty
+	// https://github.com/openshift/enhancements/pull/200
+	ClusterProfile string `json:"clusterProfile,omitempty"`
 }
 
 // ClusterDomain returns the DNS domain that all records for a cluster must belong to.
