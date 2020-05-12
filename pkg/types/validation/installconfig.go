@@ -104,6 +104,7 @@ func ValidateInstallConfig(c *types.InstallConfig, openStackValidValuesFetcher o
 	if _, ok := validPublishingStrategies[c.Publish]; !ok {
 		allErrs = append(allErrs, field.NotSupported(field.NewPath("publish"), c.Publish, validPublishingStrategyValues))
 	}
+	// add profile validation against well-known list
 
 	return allErrs
 }

@@ -20,6 +20,7 @@ var (
 	defaultClusterNetwork = ipnet.MustParseCIDR("10.128.0.0/14")
 	defaultHostPrefix     = 23
 	defaultNetworkType    = "OpenShiftSDN"
+	defaultClusterProfile = "default"
 )
 
 // SetInstallConfigDefaults sets the defaults for the install config.
@@ -54,6 +55,10 @@ func SetInstallConfigDefaults(c *types.InstallConfig) {
 
 	if c.Publish == "" {
 		c.Publish = types.ExternalPublishingStrategy
+	}
+
+	if c.ClusterProfile == "" {
+		c.ClusterProfile = defaultClusterProfile
 	}
 
 	if c.ControlPlane == nil {
