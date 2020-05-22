@@ -85,7 +85,7 @@ const (
 	// filenames for baremetal clusters.
 	hostFileName = "99_openshift-cluster-api_hosts-%s.yaml"
 
-	// masterMachineFileName is the format string for constucting the
+	// masterMachineFileName is the format string for constructing the
 	// master Machine filenames.
 	masterMachineFileName = "99_openshift-cluster-api_master-machines-%s.yaml"
 
